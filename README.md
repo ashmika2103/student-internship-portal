@@ -1,39 +1,100 @@
-## React
+# Student Internship Portal
 
-This is a simple React application. This application serves as a basic template for a react applications.  
-This project is bootstrapped with [Vite](https://vitejs.dev/guide/).
+## About the Project
+The Student Internship Portal is a web application that helps students explore internship opportunities and apply for internships online.
 
-## How to run
+## Features
+- View available internships.
+- View internship details.
+- Apply for internships using an application form.
+- Store submitted applications in MongoDB.
+- Backend API built with Node.js and Express.
+- Responsive user interface built with React.
 
-1. Before running the application, make sure all dependencies are installed. To install dependencies, run following command in terminal:
+## Technologies Used
+- **Frontend:** React, Vite, HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas
+- **Version Control:** Git and GitHub
 
-   ```sh
-   npm install
-   ```
+## Project Structure
+```text
+student-internship-portal/
+├── backend/
+│   ├── models/
+│   │   └── Application.js
+│   ├── routes/
+│   │   └── applications.js
+│   ├── server.js
+│   └── package.json
+├── src/
+│   ├── data/
+│   ├── pages/
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── README.md
+```
 
-2. Once dependencies are installed, run the following command to start the application:
+## Getting Started
 
-   ```sh
-   npm run dev
-   ```
+### 1. Clone the Repository
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd YOUR_PROJECT_FOLDER
+```
 
-3. Refresh the URL in simple browser to see the output.
+### 2. Install Frontend Dependencies
+```bash
+npm install
+```
 
-## FAQs & Debugging
+### 3. Configure the Backend
+Navigate to the backend folder and install its dependencies:
+```bash
+cd backend
+npm install
+```
 
-### 1. I do not see browser in my workspace
+Create a `.env` file inside the `backend` folder:
+```env
+PORT=5000
+MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING
+CLIENT_ORIGIN=http://localhost:5173
+```
 
-Studio will automatically open the app in a new browser tab. If not, you can use the following steps to open the simple browser
+Replace the MongoDB placeholder with your own connection string. Never upload your `.env` file or database credentials to GitHub.
 
-1. From VS Code command pallette(`Ctrl/Cmd + Shift + P`), run **Studio Manager: SimpleBrowser Default URL** command. This will open the app in a new browser tab.
+### 4. Start the Backend
+From the `backend` folder, run:
+```bash
+npm start
+```
 
-2. Your app runs on hosted env which can be accessed using host id, port provided in file **.vscode/.studio/studio-env.json**. Use values to create the URL as follows:
-   `https://<STUDIO_HOST_ID>-3000.<STUDIO_DOMAIN>`
+### 5. Start the Frontend
+Open a second terminal in the project root and run:
+```bash
+npm run dev
+```
 
-### 2. Getting `vite: not found` error
+Open the local URL displayed in the terminal.
 
-This means node_modules are missing in your workspace, please refer the 'How to run' section and make sure you have followed the steps in sequence
+## API Endpoints
 
-### 3. Can I use create-react-app instead Vite?
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/applications` | Retrieve submitted applications |
+| POST | `/api/applications` | Submit a new application |
 
-Yes, you can use create-react-app instead Vite, the default workspace is loaded with Vite setup, you can remove the Vite dependencies, add create-react-app dependencies and update the scripts to start using create-react-app.
+## Database
+MongoDB Atlas is used to store internship application details.
+
+## Future Enhancements
+- Student login and registration.
+- Internship search and filtering.
+- Application status tracking.
+- Admin dashboard for managing internships and applications.
+
+
